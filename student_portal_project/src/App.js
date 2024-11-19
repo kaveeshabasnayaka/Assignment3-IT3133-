@@ -1,23 +1,22 @@
 
 import "./App.css";
-//import './assets/css/compo.css'
-import Fontsize from './components/Fontsize';
+import './assets/css/compo.css'
 import React, { useState } from 'react';
-//import { students as studentsData } from "./assets/StudentsDb";
-//import StuDataTable from "./components/stuDataTable";
-//import ProfileView from "./components/profileView";
+import { students as studentsData } from "./assets/StudentsDb";
+import StuDataTable from "./components/stuDataTable";
+import ProfileView from "./components/profileView";
 
 function App() {
-  //const [selectedStudent, setSelectedStudent] = useState(studentsData[0]);
+  const [selectedStudent, setSelectedStudent] = useState(studentsData[0]);
   const [fontSize, setFontSize] = useState('medium');
 
   const handleFontSizeChange = (size) => {
     setFontSize(size);
   };
 
- // const handleViewProfile = (student) => {
-  //  setSelectedStudent(student);
-  //};
+  const handleViewProfile = (student) => {
+    setSelectedStudent(student);
+  };
 
   return (
     <div>
@@ -34,9 +33,9 @@ function App() {
         </div>
 
       <div className={`outerDiv ${fontSize}`}>
-          {/* <StuDataTable students={studentsData} handleViewProfile={handleViewProfile} /> */}
+          { <StuDataTable students={studentsData} handleViewProfile={handleViewProfile} /> }
 
-          {/* <ProfileView selectedStudent={selectedStudent} /> */}
+          { <ProfileView selectedStudent={selectedStudent} /> }
       </div>
     </div>
   );
